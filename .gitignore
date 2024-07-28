@@ -1,0 +1,20 @@
+# Cypress configuration
+cypress/videos
+cypress/screenshots
+
+# Cypress cache and logs
+cypress/cache
+cypress/reports
+cypress/fixtures/*.json
+
+# Node modules
+node_modules/
+
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
