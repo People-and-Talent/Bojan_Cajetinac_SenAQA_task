@@ -1,7 +1,7 @@
 // cypress/e2e/tests/login.cy.js
 
 describe('API Login Tests', () => {
-    const loginUrl = 'https://thinking-tester-contact-list.herokuapp.com/users/login';
+    const loginUrl = 'users/login';
 
     before(() => {
         // Load fixture data

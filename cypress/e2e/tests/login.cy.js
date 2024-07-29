@@ -35,10 +35,10 @@ describe('Login Feature Tests', () => {
     // Verify error message
     cy.get(loginPageSelectors.errorMessage)
       .should('have.text', 'Incorrect username or password');
-      cy.getCookie('token').should('not.exist');
+    cy.getCookie('token').should('not.exist');
   });
 
-  it.only('should display an error for empty email and password', () => {
+  it('should display an error for empty email and password', () => {
     cy.visit('');
     cy.get(loginPageSelectors.loginButton).click();
     // Verify error message
@@ -53,5 +53,15 @@ describe('Login Feature Tests', () => {
     cy.get(loginPageSelectors.errorMessage)
       .should('have.text', 'Incorrect username or password');
   });
-  
+
+  //This is not a test; it is just to demonstrate that the login via the API command is working. 
+  //This command will be used in the future for other parts of the application to test, 
+  //avoiding the need to interact with the UI.
+  it('demonstrate login via API command', () => {
+    cy.login(standardUser.email, standardUser.password);
+    cy.visit('contactList')
+    cy.url().should('include', '/contactList');
+    cy.get(homePageSelectors.logoutButton).should('be.visible');
+  });
+
 });
